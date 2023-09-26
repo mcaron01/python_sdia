@@ -34,7 +34,11 @@
     "editor.tabSize": 4,
     "editor.tokenColorCustomizations": null,
     "editor.wordWrap": "bounded",
-    "editor.quickSuggestions": true,
+    "editor.quickSuggestions": {
+        "comments": "on",
+        "strings": "on",
+        "other": "on"
+    },
     // Terminal
     // "terminal.integrated.inheritEnv": false,
     "terminal.integrated.defaultProfile.osx": "zsh",
@@ -70,7 +74,11 @@
     // Markdown
     "[markdown]": {
         "editor.tabSize": 2,
-        "editor.quickSuggestions": true,
+        "editor.quickSuggestions": {
+            "comments": "on",
+            "strings": "on",
+            "other": "on"
+        },
     },
     // RestructuredText
     "restructuredtext.confPath": "${workspaceFolder}/docs",
