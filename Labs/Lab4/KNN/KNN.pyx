@@ -23,16 +23,7 @@ cpdef k_nearest_neighbors(double[:, :] x_train,
         k_nearest_indices = np.argsort(distances)[:k].astype(long)
         for l in range (k):
             k_nearest_labels[l] = long(class_train[k_nearest_indices[l]])
-        counts = np.bincount(k_nearest_labels).astype(long)
-        # Trouver l'indice de la valeur maximale dans counts
-        max_count = counts[0]
-        max_index = 0
-
-        for j in range(1, counts.shape[0]):
-            if counts[j] > max_count:
-                max_count = counts[j]
-                max_index = j
-
-        predicted_labels[i] = max_index
+            
+        predicted_labels[i] = np.bincount(k_nearest_labels).astype(long).argmax()
 
     return predicted_labels
